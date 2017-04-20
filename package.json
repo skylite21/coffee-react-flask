@@ -1,0 +1,18 @@
+{
+  "name": "coffee-react-flask",
+  "version": "1.0.0",
+  "description": "minimal setup for a flask project powered by react and coffee",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffeelint": "^0.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-coffee": "^2.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "skylite",
+  "license": "ISC"
+}

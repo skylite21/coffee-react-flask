@@ -1,0 +1,1 @@
+this.Button=React.createClass({displayName:"Button",getInitialState:function(){return{counter:0}},text:function(t){return this.setState({counter:this.state.counter+1}),console.log(this.state.counter)},render:function(){return React.DOM.input({type:"button",value:"Proba",onClick:this.text})}});

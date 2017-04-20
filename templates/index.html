@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask React Tutorial</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<!-- The core React library -->
+<script src="https://npmcdn.com/react@15.3.1/dist/react.js"></script>
+<!-- The ReactDOM Library -->
+<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/button.js') }}"></script>
+
+<script>
+	$(function(){
+		ReactDOM.render(React.createElement(Button,{text: "Welcome to my page"}),document.getElementById('mount-point'))
+	})
+</script>
+</head>
+<body>
+     <div id="mount-point">
+         <p>Hello world.</p>
+     </div>
+</body>
+</html>
