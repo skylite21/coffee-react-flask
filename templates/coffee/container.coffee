@@ -6,7 +6,6 @@
     @setState counter: e.target.value
     console.log(@state.counter)
 
-
   render: ->
     R.div null,
       Re Menu.container,
