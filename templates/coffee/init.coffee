@@ -3,3 +3,5 @@
 @ReD = ReactDOM.render
 @ReC = React.createClass
 @Menu = {}
+@User = {}
+@Page = {}

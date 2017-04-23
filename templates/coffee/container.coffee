@@ -1,27 +1,19 @@
 @Container = ReC
-  displayName: "Container"
-  getInitialState: ->
-    counter: 0
-  change: (e) ->
-    @setState counter: e.target.value
-    console.log(@state.counter)
+  displayName: "Main Container"
 
   render: ->
     R.div null,
       Re Menu.container,
         menuItems: [
-          value: "menu1"
+          value: "login"
+          page: Page.login
         ,
-          value: "menu2"
-          xy: "akarmis2"
+          value: "home"
+          page: Page.home
+          login: true
         ,
           value: "menu43"
         ]
-      R.input
-        type: 'number'
-        value: @state.counter
-        onChange: @change
-      for i in [0..@state.counter]
-        Re Button,
-          text:i
-          key:i
+        user: @props.user
+      Re @props.page || User.login,
+        {}

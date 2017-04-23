@@ -7,3 +7,5 @@ this.ReD = ReactDOM.render;
 this.ReC = React.createClass;
 
 this.Menu = {};
+
+this.Page = {};

@@ -5,11 +5,12 @@ this.Button = ReC({
       counter: 0
     };
   },
-  text: function(e) {
+  text: function(event) {
     this.setState({
       counter: this.state.counter + 1
     });
-    return console.log(this.state.counter);
+    console.log(this.state.counter);
+    return console.log(event.target.value);
   },
   render: function() {
     return R.div(null, R.input({

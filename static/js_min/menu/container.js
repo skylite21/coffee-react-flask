@@ -1,1 +1,31 @@
-this.Menu.container=ReC({displayName:"menu.container",render:function(){var e;return R.div({className:"row"},R.div({className:"col-xs-12"},R.div({className:"btn-group custom-menu",role:"group"},function(){var n,t,s,r;for(s=this.props.menuItems,r=[],n=0,t=s.length;n<t;n++)e=s[n],r.push(Re(Menu.item,{item:e,key:e.value,width:100/this.props.menuItems.length}));return r}.call(this))))}});
+this.Menu.container = ReC({
+  displayName: "Menu Container",
+  render: function() {
+    var item;
+    return R.div({
+      className: "row"
+    }, R.div({
+      className: "col-xs-12"
+    }, R.div({
+      className: "btn-group custom-menu",
+      role: "group"
+    }, (function() {
+      var i, len, ref, results;
+      ref = this.props.menuItems;
+      results = [];
+      for (i = 0, len = ref.length; i < len; i++) {
+        item = ref[i];
+        if (!item.login || this.props.user) {
+          results.push(Re(Menu.item, {
+            item: item,
+            key: item.value,
+            width: 100 / this.props.menuItems.length
+          }));
+        } else {
+          results.push(void 0);
+        }
+      }
+      return results;
+    }).call(this))));
+  }
+});

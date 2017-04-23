@@ -1,5 +1,5 @@
 this.Menu.container = ReC({
-  displayName: "menu.container",
+  displayName: "Menu Container",
   render: function() {
     var item;
     return R.div({

@@ -1,1 +1,13 @@
-this.Re=React.createElement,this.R=React.DOM,this.ReD=ReactDOM.render,this.ReC=React.createClass,this.Menu={};
+this.Re = React.createElement;
+
+this.R = React.DOM;
+
+this.ReD = ReactDOM.render;
+
+this.ReC = React.createClass;
+
+this.Menu = {};
+
+this.User = {};
+
+this.Page = {};
