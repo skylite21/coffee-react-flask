@@ -1,10 +1,17 @@
 appdirs==1.4.3
 click==6.7
 Flask==0.12.1
+importmagic==0.1.7
 itsdangerous==0.24
+jedi==0.10.2
 Jinja2==2.9.6
+log-colorizer==1.8.5
 MarkupSafe==1.0
 packaging==16.8
 pyparsing==2.2.0
 six==1.10.0
+spark-parser==1.6.0
+uncompyle6==2.9.10
+wdb==3.1.5
 Werkzeug==0.12.1
+xdis==3.2.4

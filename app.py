@@ -20,6 +20,7 @@ app.wsgi_app = WdbMiddleware(app.wsgi_app)
 @app.route("/")
 def hello():
     print("hello")
+
     return render_template('index.html')
 
 

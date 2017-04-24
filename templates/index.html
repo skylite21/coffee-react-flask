@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title>Flask React Tutorial</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<!-- bootswatch -->
 <script type="text/javascript" src="{{ url_for('static', filename='js_min/bootstrap.min.js') }}"></script>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+
+<!-- custom css -->
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 
 
@@ -13,6 +17,11 @@
 <script src="https://npmcdn.com/react@15.3.1/dist/react.js"></script>
 <!-- The ReactDOM Library -->
 <script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.js"></script>
+
+<!-- react;router  -->
+<script src="https://unpkg.com/react-router/umd/react-router.min.js"></script>
+
+
 <!--- render only js that has cookie signed -->
 <script type="text/javascript" src="{{ url_for('static', filename='js_min/init.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js_min/router.js') }}"></script>
