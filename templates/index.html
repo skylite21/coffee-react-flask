@@ -39,8 +39,8 @@
 <script>
 	$(function(){
 		// ReactDOM.render(React.createElement(Container,{text: "Welcome to my page", page: Page.home }),document.getElementById('mount-point'))
-    site = new Router(Container, {text: "Welcome to my page", page: Page.login },"mount-point") 
-    site.render()
+    // site = new Router(Container, {text: "Welcome to my page", page: Page.login },"mount-point") 
+    // site.render()
 	})
 </script>
 </head>
@@ -48,5 +48,6 @@
      <div id="mount-point">
          <p>If you see this, react is not working</p>
      </div>
+     <script src="{{ url_for('static', filename='js_min/layout.js') }}"></script>
 </body>
 </html>

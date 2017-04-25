@@ -1,6 +1,6 @@
 from flask import Flask, redirect, request, url_for, jsonify
 from flask import render_template
-# from flask import send_from_directory
+from flask import send_from_directory
 # import logging
 # from logging.handlers import RotatingFileHandler
 from wdb.ext import WdbMiddleware
@@ -40,7 +40,7 @@ def login():
     check_user(user, password)
     user = "skylite"
     # sign the userhash!!
-    # send_from_directory('static', "js_min/pages/page_home.js")
+    send_from_directory('static', "js_min/pages/page_home.js")
     return jsonify(user=user, userhash="asdas2")
 
 
