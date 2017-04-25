@@ -1,5 +1,5 @@
 @Page.home = ReC
-  displayName: "Home page for this shit"
+  displayName: "Home page for this page"
   getInitialState: ->
     counter: 0
   change: (e) ->

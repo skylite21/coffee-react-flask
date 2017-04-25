@@ -8,35 +8,45 @@ var gulp = require('gulp')
  
 // task to syntaxcheck CoffeLint
 gulp.task('coffeeLint', function () {
-    gulp.src('templates/coffee/**/*.coffee') // path to your files
-    .pipe(coffeelint())
-    .pipe(coffeelint.reporter())
-    .pipe(debug());
+	gulp.src('templates/coffee/**/*.coffee') // path to your files
+	.pipe(coffeelint())
+	.pipe(coffeelint.reporter())
+	.pipe(debug());
 });
 
 
 // task to compile coffee to js
-// rename dest from js_min to js for real minify
 gulp.task('coffee-compile', function() {
-  gulp.src('templates/coffee/**/*.coffee')
-    .pipe(coffee({bare: true}))
-    .pipe(gulp.dest('./static/js_min/'))
-    .pipe(debug());
+  gulp.src('./templates/coffee/**/*.coffee')
+	.pipe(coffee({bare: true}))
+	.pipe(gulp.dest('./static/js/'))
+	.pipe(debug());
+});
+
+// task to copy js to js_min if you dont need minify
+gulp.task('copy', function () {
+	gulp.src('./static/js/**/*.js')
+		.pipe(gulp.dest('./static/js_min/'));
 });
 
  
 // task to minify the whole thing, this will be loaded at index.html
-// rename target from js_min_real to js_min if you REALLY want minify. 
 gulp.task('minify-js', function () {
-    gulp.src('templates/js/**/*.js') // path to your files
-    .pipe(uglify())
-    .pipe(gulp.dest('./static/js_min_real/'))
-    .pipe(debug());
+	gulp.src('./static/js/**/*.js') // path to your files
+	.pipe(uglify())
+	.pipe(gulp.dest('./static/js_min/'))
+	.pipe(debug());
 });
 
  
-// watch
+// watch if you dont want minify
 gulp.task('watch', function () {
-    gulp.watch(['templates/coffee/**/*.coffee'], ['coffeeLint', 'coffee-compile'])
-    gulp.watch(['templates/js/**/*.js'], ['minify-js']);
+	gulp.watch(['./templates/coffee/**/*.coffee'], ['coffeeLint', 'coffee-compile'])
+	gulp.watch(['./static/js/**/*.js'], ['copy']);
+});
+
+// watch_min if you want minify
+gulp.task('watch_min', function () {
+	gulp.watch(['./templates/coffee/**/*.coffee'], ['coffeeLint', 'coffee-compile'])
+	gulp.watch(['./static/js/**/*.js'], ['minify-js']);
 });

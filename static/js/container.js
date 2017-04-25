@@ -4,14 +4,17 @@ this.Container = ReC({
     return R.div(null, Re(Menu.container, {
       menuItems: [
         {
-          value: "menu1"
+          value: "login",
+          page: Page.login
         }, {
-          value: "menu2",
-          xy: "akarmis2"
+          value: "home",
+          page: Page.home,
+          login: true
         }, {
           value: "menu43"
         }
-      ]
-    }), Re(this.props.page || Page.home));
+      ],
+      user: this.props.user
+    }), Re(this.props.page || User.login, {}));
   }
 });

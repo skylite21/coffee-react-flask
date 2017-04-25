@@ -15,11 +15,15 @@ this.Menu.container = ReC({
       results = [];
       for (i = 0, len = ref.length; i < len; i++) {
         item = ref[i];
-        results.push(Re(Menu.item, {
-          item: item,
-          key: item.value,
-          width: 100 / this.props.menuItems.length
-        }));
+        if (!item.login || this.props.user) {
+          results.push(Re(Menu.item, {
+            item: item,
+            key: item.value,
+            width: 100 / this.props.menuItems.length
+          }));
+        } else {
+          results.push(void 0);
+        }
       }
       return results;
     }).call(this))));

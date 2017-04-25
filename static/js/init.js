@@ -8,4 +8,6 @@ this.ReC = React.createClass;
 
 this.Menu = {};
 
+this.User = {};
+
 this.Page = {};

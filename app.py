@@ -16,6 +16,11 @@ app.wsgi_app = WdbMiddleware(app.wsgi_app)
 #     root_dir = os.path.dirname(os.getcwd())
 #     return send_from_directory(os.path.join(root_dir, 'templates', 'js_min'), filename)
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', 
+							   mimetype='image/vnd.microsoft.icon')
 
 @app.route("/")
 def hello():

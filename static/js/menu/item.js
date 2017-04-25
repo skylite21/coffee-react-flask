@@ -1,6 +1,8 @@
 this.Menu.item = ReC({
   displayName: "menu item",
   loadPage: function() {
+    site.props.page = this.props.item.page;
+    site.render();
     return console.log("page " + this.props.item.value + " loaded");
   },
   render: function() {
