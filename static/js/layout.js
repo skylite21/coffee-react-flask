@@ -6,11 +6,21 @@ Layout = (function(superClass) {
   extend(Layout, superClass);
 
   function Layout() {
-    return Layout.__super__.constructor.apply(this, arguments);
+    Layout.__super__.constructor.apply(this, arguments);
+    this.state = {
+      name: "will"
+    };
+    return;
   }
 
   Layout.prototype.render = function() {
-    return R.div(null, R.h1(null, "This is the main layout"), Re(Container));
+    setTimeout(function() {
+      this.setState({
+        name: "bob"
+      });
+      1000;
+    });
+    return R.div(null, R.h1(null, "This is the main layout " + this.state.name), Re(Container));
   };
 
   return Layout;

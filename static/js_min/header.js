@@ -8,48 +8,34 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Layout = function (_React$Component) {
-  _inherits(Layout, _React$Component);
+var Header = function (_React$Component) {
+  _inherits(Header, _React$Component);
 
-  function Layout() {
-    _classCallCheck(this, Layout);
+  function Header() {
+    _classCallCheck(this, Header);
 
-    var _this = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
-
-    _this.state = { name: "WWWW" };
-    return _this;
+    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
   }
 
-  _createClass(Layout, [{
-    key: "changeTitle",
-    value: function changeTitle(title) {
-      this.setState({ title: title });
+  _createClass(Header, [{
+    key: "handleChange",
+    value: function handleChange(e) {
+      var title = e.target.value;
+      this.props.changeTitle(title);
     }
   }, {
     key: "render",
     value: function render() {
-      var title = "this is title";
-      // setTimeout(() => {
-      //   this.setState({name: "bob"}) 
-      // }, 1000)
-
+      console.log(this.props);
       return React.createElement(
         "div",
         null,
-        React.createElement(
-          "h1",
-          null,
-          " It workings! ",
-          this.state.name,
-          " "
-        ),
-        React.createElement(Header, { changeTitle: this.changeTitle.bind(this), title: this.state.title })
+        "what a div you are ",
+        this.props.title,
+        React.createElement("input", { onChange: this.handleChange.bind(this) })
       );
     }
   }]);
 
-  return Layout;
+  return Header;
 }(React.Component);
-
-var app = document.getElementById('mount-point');
-ReactDOM.render(React.createElement(Layout, null), app);

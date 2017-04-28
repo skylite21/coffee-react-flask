@@ -4,6 +4,7 @@ var gulp = require('gulp')
 , debug = require('gulp-debug')
 , coffeelint = require("gulp-coffeelint")
 , coffee = require("gulp-coffee")
+, babel = require('gulp-babel')
 , uglify = require("gulp-uglify");
  
 // task to syntaxcheck CoffeLint
@@ -12,6 +13,16 @@ gulp.task('coffeeLint', function () {
 	.pipe(coffeelint())
 	.pipe(coffeelint.reporter())
 	.pipe(debug());
+});
+
+gulp.task('babel', function () {
+  return gulp.src('./templates/jsx/**/*.jsx')
+                .pipe(babel({
+                  presets: ['react', 'es2015', 'stage-2']
+                  // presets: ['react']
+                }))
+    .pipe(gulp.dest('./static/js_min/'))
+  .pipe(debug());
 });
 
 
@@ -50,3 +61,11 @@ gulp.task('watch_min', function () {
 	gulp.watch(['./templates/coffee/**/*.coffee'], ['coffeeLint', 'coffee-compile'])
 	gulp.watch(['./static/js/**/*.js'], ['minify-js']);
 });
+
+// watch if you dont want minify
+gulp.task('watch_jsx', function () {
+          gulp.watch(['./templates/jsx/**/*.jsx'], ['babel'])
+          gulp.watch(['./static/js/**/*.js'], ['copy']);
+});
+
+
