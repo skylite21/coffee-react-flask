@@ -1,6 +1,7 @@
 # coffee-react-flask
 
 This is a flask based web app which can be a starting point for any kind of web app. If you want to use react with coffee, try this out. If you dont like it, dont :)
+I stopped working on this, and switched to flask with angular.
 
 # Installing
 
