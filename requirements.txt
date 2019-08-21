@@ -13,5 +13,5 @@ six==1.10.0
 spark-parser==1.6.0
 uncompyle6==2.9.10
 wdb==3.1.5
-Werkzeug==0.12.1
+Werkzeug==0.15.3
 xdis==3.2.4
